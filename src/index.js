@@ -2,33 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-function Lake({ name }) {
-  return (
-    <div>
-      <h1>Visit {name}!</h1>
-    </div>
-  );
+function Lake() {
+  return <h1>Lake</h1>;
 }
 
-function SkiResort({ name }) {
-  return (
-    <div>
-      <h1>Visit {name}!</h1>
-    </div>
-  );
+function SkiResort() {
+  return <h1>Mountain</h1>;
 }
 
-function App(props) {
+function App() {
   return (
-    <div>
-      {props.season === "summer" ? (
-        <Lake name="Smith Lake" />
-      ) : props.season === "winter" ? (
-        <SkiResort name="Forge Mountain" />
-      ) : (
-        <h1>Come back in the winter or summer!</h1>
-      )}
-    </div>
+    <React.Fragment>
+      <Lake />
+      <SkiResort />
+    </React.Fragment>
   );
 }
 
