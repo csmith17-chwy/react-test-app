@@ -20,3 +20,5 @@ function App() {
 }
 
 ReactDOM.render(<App season="winter" />, document.getElementById("root"));
+
+const [first, second, third] = ["popcore", "pretzels", "pineapple"];
