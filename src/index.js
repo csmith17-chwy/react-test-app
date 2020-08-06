@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-function Lake() {
-  return <h1>Lake</h1>;
-}
-
-function SkiResort() {
-  return <h1>Mountain</h1>;
-}
-
-function App() {
+function App({ name }) {
+  const [year, setYear] = useState("2013");
+  const [manager, setManager] = useState("Colin");
+  const [status, setStatus] = useState("Open");
   return (
-    <React.Fragment>
-      <Lake />
-      <SkiResort />
-    </React.Fragment>
+    <>
+      <div>
+        <h1>{year}</h1>
+        <button onClick={() => setYear(year + 1)}>Next Year</button>
+      </div>
+      <div>
+        <h1>Manager on Duty: {manager}</h1>
+        <button onClick={() => setManager("Chris")}>New Manager</button>
+      </div>
+      <div>
+        <h1>Status: {status}</h1>
+        <button onClick={() => setStatus("Back in 5")}>Break</button>
+        <button onClick={() => setStatus("Closed")}>Closed</button>
+        <button onClick={() => setStatus("Open")}>Open</button>
+      </div>
+    </>
   );
 }
 
-ReactDOM.render(<App season="winter" />, document.getElementById("root"));
-
-const [first, second, third] = ["popcore", "pretzels", "pineapple"];
+ReactDOM.render(<App />, document.getElementById("root"));
